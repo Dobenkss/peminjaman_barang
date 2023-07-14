@@ -1,0 +1,508 @@
+ERROR - 2023-07-13 00:28:21 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'pwl_fp', 3306, '', 0)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\UserController->Login()
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\UserController->Login()
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#12 {main}
+CRITICAL - 2023-07-13 00:28:21 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\UserController->Login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+ERROR - 2023-07-13 00:28:25 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'pwl_fp', 3306, '', 0)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\UserController->Login()
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\UserController->Login()
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#12 {main}
+CRITICAL - 2023-07-13 00:28:25 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\UserController->Login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+ERROR - 2023-07-13 00:28:34 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'pwl_fp', 3306, '', 0)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\UserController->Login()
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\UserController->Login()
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#12 {main}
+CRITICAL - 2023-07-13 00:28:34 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(15): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\UserController.php(39): App\Models\UserModel->getUserByUsername('admin@gmail')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\UserController->Login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 02:51:23 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 226.
+ 1 SYSTEMPATH\CodeIgniter.php(226): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(190): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(83): CodeIgniter\CodeIgniter->initialize()
+INFO - 2023-07-13 01:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 01:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 02:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 02:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 02:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 03:00:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 03:01:56 --> Undefined variable $barangs
+in APPPATH\Views\peminjam\barang.php on line 3.
+ 1 APPPATH\Views\peminjam\barang.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/barang', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(32): view('peminjam/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->daftarBarang()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 03:05:05 --> Undefined variable $barangs
+in APPPATH\Views\peminjam\barang.php on line 3.
+ 1 APPPATH\Views\peminjam\barang.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/barang', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(32): view('peminjam/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->daftarBarang()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 03:05:06 --> Undefined variable $barangs
+in APPPATH\Views\peminjam\barang.php on line 3.
+ 1 APPPATH\Views\peminjam\barang.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/barang', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(32): view('peminjam/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->daftarBarang()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 03:05:06 --> Undefined variable $barangs
+in APPPATH\Views\peminjam\barang.php on line 3.
+ 1 APPPATH\Views\peminjam\barang.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/barang', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(32): view('peminjam/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->daftarBarang()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 03:05:06 --> Undefined variable $barangs
+in APPPATH\Views\peminjam\barang.php on line 3.
+ 1 APPPATH\Views\peminjam\barang.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/barang', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(32): view('peminjam/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->daftarBarang()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 03:05:07 --> Undefined variable $barangs
+in APPPATH\Views\peminjam\barang.php on line 3.
+ 1 APPPATH\Views\peminjam\barang.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/barang', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(32): view('peminjam/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->daftarBarang()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 03:05:07 --> Undefined variable $barangs
+in APPPATH\Views\peminjam\barang.php on line 3.
+ 1 APPPATH\Views\peminjam\barang.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\barang.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/barang', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(32): view('peminjam/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->daftarBarang()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 03:20:42 --> Undefined variable $brg
+in APPPATH\Views\peminjam\peminjaman.php on line 7.
+ 1 APPPATH\Views\peminjam\peminjaman.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brg', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\peminjaman.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\peminjaman.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/peminjaman', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(40): view('peminjam/peminjaman', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->prosesPeminjaman('4')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 03:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 03:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 03:24:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 03:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 03:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 03:28:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 03:28:24 --> Undefined variable $user_id
+in APPPATH\Controllers\PeminjamanController.php on line 59.
+ 1 APPPATH\Controllers\PeminjamanController.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_id', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Controllers\\PeminjamanController.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->store()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+ERROR - 2023-07-13 03:29:01 --> mysqli_sql_exception: Column 'user_id' cannot be null in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\PeminjamanController.php(71): CodeIgniter\Model->insert(Array)
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\PeminjamanController->store()
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#13 {main}
+CRITICAL - 2023-07-13 03:29:01 --> Column 'user_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (NULL, \'4\', \'akjanfk\', \'kjefnskefjn\', \'12124124\', \'2023-07-13\', NULL, \'kjwakwjnaf\', \'Sedang Dipinjam\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (NULL, \'4\', \'akjanfk\', \'kjefnskefjn\', \'12124124\', \'2023-07-13\', NULL, \'kjwakwjnaf\', \'Sedang Dipinjam\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (NULL, \'4\', \'akjanfk\', \'kjefnskefjn\', \'12124124\', \'2023-07-13\', NULL, \'kjwakwjnaf\', \'Sedang Dipinjam\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (:user_id:, :barang_id:, :nama:, :nim:, :no_telepon:, :tanggal_mulai:, :tanggal_selesai:, :tujuan:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\PeminjamanController.php(71): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->store()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 03:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 03:29:56 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\PeminjamanController.php on line 48.
+ 1 APPPATH\Controllers\PeminjamanController.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Controllers\\PeminjamanController.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->store()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 03:31:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 03:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-13 03:31:35 --> mysqli_sql_exception: Column 'tanggal_selesai' cannot be null in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\PeminjamanController.php(78): CodeIgniter\Model->insert(Array)
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\PeminjamanController->store()
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#13 {main}
+CRITICAL - 2023-07-13 03:31:35 --> Column 'tanggal_selesai' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (\'2\', \'4\', \'lnakjfn\', \'2738412\', \'3948234\', \'2023-07-13\', NULL, \'ejfnsdkjfsnq\', \'Sedang Dipinjam\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (\'2\', \'4\', \'lnakjfn\', \'2738412\', \'3948234\', \'2023-07-13\', NULL, \'ejfnsdkjfsnq\', \'Sedang Dipinjam\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (\'2\', \'4\', \'lnakjfn\', \'2738412\', \'3948234\', \'2023-07-13\', NULL, \'ejfnsdkjfsnq\', \'Sedang Dipinjam\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `peminjaman` (`user_id`, `barang_id`, `nama`, `nim`, `no_telepon`, `tanggal_mulai`, `tanggal_selesai`, `tujuan`, `status`) VALUES (:user_id:, :barang_id:, :nama:, :nim:, :no_telepon:, :tanggal_mulai:, :tanggal_selesai:, :tujuan:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\PeminjamanController.php(78): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->store()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 03:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-13 07:48:51 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'pwl_fp', 3306, '', 0)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\BarangController.php(13): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\BarangController->index()
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarangController))
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\app\Controllers\BarangController.php(13): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(932): App\Controllers\BarangController->index()
+#7 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarangController))
+#8 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\KULIAH\SEMESTER 4\pwl adit\fp pwl\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+CRITICAL - 2023-07-13 07:48:51 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `barang`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\BarangController.php(13): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\BarangController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarangController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 07:49:02 --> Object of class CodeIgniter\View\View could not be converted to string
+in APPPATH\Views\layout_admin\template.php on line 95.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout_admin/template', [], true)
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('admin/barang/barang', [], true)
+ 5 APPPATH\Controllers\BarangController.php(15): view('admin/barang/barang', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\BarangController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarangController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 08:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:06:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 08:15:03 --> Undefined variable $endSection
+in APPPATH\Views\admin\peminjaman\peminjaman.php on line 46.
+ 1 APPPATH\Views\admin\peminjaman\peminjaman.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $endSection', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\admin\\peminjaman\\peminjaman.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\admin\\peminjaman\\peminjaman.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('admin/peminjaman/peminjaman', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(17): view('admin/peminjaman/peminjaman', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 08:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 08:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 09:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 11:06:35 --> Undefined variable $brg
+in APPPATH\Views\peminjam\peminjaman.php on line 7.
+ 1 APPPATH\Views\peminjam\peminjaman.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brg', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\peminjaman.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\peminjaman.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/peminjaman', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(42): view('peminjam/peminjaman', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->prosesPeminjaman('5')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 11:07:02 --> Undefined variable $endSection
+in APPPATH\Views\peminjam\peminjaman.php on line 44.
+ 1 APPPATH\Views\peminjam\peminjaman.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $endSection', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\peminjaman.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\peminjam\\peminjaman.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/peminjaman', [], true)
+ 5 APPPATH\Controllers\PeminjamanController.php(42): view('peminjam/peminjaman', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamanController->prosesPeminjaman('5')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 11:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:08:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 11:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 15:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 16:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 16:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 16:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 16:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 16:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 16:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-13 16:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-13 16:24:59 --> Undefined variable $barangs
+in APPPATH\Views\admin\admin.php on line 22.
+ 1 APPPATH\Views\admin\admin.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $barangs', 'C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\admin\\admin.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\app\\Views\\admin\\admin.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('admin/admin', [], true)
+ 5 APPPATH\Controllers\AdminController.php(22): view('admin/admin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AdminController->admin()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+CRITICAL - 2023-07-13 16:29:17 --> Invalid file: "peminjam/pwminjam.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('peminjam/pwminjam.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('peminjam/pwminjam', [], true)
+ 3 APPPATH\Controllers\PeminjamController.php(22): view('peminjam/pwminjam', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PeminjamController->member()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PeminjamController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ASUS\\Documents\\KULIAH\\SEMESTER 4\\pwl adit\\fp pwl\\public\\index.php')
+INFO - 2023-07-13 23:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
